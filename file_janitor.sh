@@ -60,6 +60,7 @@ report() {
     echo "$py_count py file(s), with total size of $py_size bytes"
 }
 
+#temporary solution
 report_parent_dir() {
     local parent_dir="$1"
 
