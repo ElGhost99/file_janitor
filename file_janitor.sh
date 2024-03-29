@@ -63,15 +63,12 @@ report() {
 report_parent_dir() {
     local parent_dir="$1"
 
-# Count tmp files
     local tmp_count=$(ls -A "$parent_dir"/*.tmp 2>/dev/null | wc -l)
     local tmp_size=$(du -b "$parent_dir"/*.tmp 2>/dev/null | awk '{s+=$1} END {print s}')
 
-# Count log files
     local log_count=$(ls -A "$parent_dir"/*.log 2>/dev/null | wc -l)
     local log_size=$(du -b "$parent_dir"/*.log 2>/dev/null | awk '{s+=$1} END {print s}')
 
-    # Count py files
     local py_count=$(ls -A "$parent_dir"/*.py 2>/dev/null | wc -l)
     local py_size=$(du -b "$parent_dir"/*.py 2>/dev/null | awk '{s+=$1} END {print s}')
 
